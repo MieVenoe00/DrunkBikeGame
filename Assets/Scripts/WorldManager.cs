@@ -26,4 +26,6 @@ public class WorldManager : MonoBehaviour
         normalWorld.SetActive(isNormalWorld);
         magicWorld.SetActive(!isNormalWorld);
     }
+
+    public bool IsNormalWorld() => isNormalWorld;  // ← denne linje manglede!
 }
