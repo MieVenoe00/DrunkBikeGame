@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: dd4978cbcb92545e39d22705f94e8ff7
+guid: 2cd665a3d079c46e08e9cbf5849973bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -693001181662555989
-    second: ildkugle2_0
-  - first:
-      213: 7392370724989328863
-    second: ildkugle2_1
+      213: 4415658450335168077
+    second: MagicDPI_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ildkugle2_0
+      name: MagicDPI_0
       rect:
         serializedVersion: 2
-        x: 114
-        y: 157
-        width: 2705
-        height: 1686
+        x: 0
+        y: 0
+        width: 6400
+        height: 3600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba0d312d817f166f0800000000000000
-      internalID: -693001181662555989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ildkugle2_1
-      rect:
-        serializedVersion: 2
-        x: 2329
-        y: 1221
-        width: 622
-        height: 134
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fdd5cf6020af69660800000000000000
-      internalID: 7392370724989328863
+      spriteID: d46fda527f1974d30800000000000000
+      internalID: 4415658450335168077
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ildkugle2_0: -693001181662555989
-      ildkugle2_1: 7392370724989328863
+      MagicDPI_0: 4415658450335168077
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

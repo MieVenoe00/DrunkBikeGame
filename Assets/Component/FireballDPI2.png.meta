@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 49d8154d2330a4cd9ba3f70dc45176df
+guid: a7403d70e7fb64f099fab5d0448b7443
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3714297001572401664
-    second: backgroundNormalNEW_0
+      213: -2655877457125357940
+    second: FireballDPI2_0
+  - first:
+      213: -5912081517434396423
+    second: FireballDPI2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +49,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 2500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: backgroundNormalNEW_0
+      name: FireballDPI2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 640
-        height: 360
+        x: 114
+        y: 157
+        width: 2705
+        height: 1686
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00285099175db8330800000000000000
-      internalID: 3714297001572401664
+      spriteID: c864311368d642bd0800000000000000
+      internalID: -2655877457125357940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireballDPI2_1
+      rect:
+        serializedVersion: 2
+        x: 2329
+        y: 1221
+        width: 622
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f0ab26fe2114fda0800000000000000
+      internalID: -5912081517434396423
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      backgroundNormalNEW_0: 3714297001572401664
+      FireballDPI2_0: -2655877457125357940
+      FireballDPI2_1: -5912081517434396423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
