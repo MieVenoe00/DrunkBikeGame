@@ -3,22 +3,23 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     [Header("Normal World - Biler")]
-    public GameObject[] carPrefabs;        // Træk dine 3 bil-prefabs ind her
+    public GameObject[] carPrefabs;
 
     [Header("Magic World - Ildkugler")]
-    public GameObject[] fireballPrefabs;   // Træk dine 3 ildkugle-prefabs ind her
+    public GameObject[] fireballPrefabs;
 
     [Header("Spawner indstillinger")]
     public float spawnInterval = 2f;
     public float spawnX = 4f;
-    public float minY = -1.2f;
-    public float maxY = 1.2f;
+
+    // De 3 faste baner
+    private float[] lanes = { 0.9f, 0f, -0.9f };
 
     private WorldManager worldManager;
 
     void Start()
     {
-        worldManager = FindAnyObjectByType<WorldManager>(); 
+        worldManager = FindAnyObjectByType<WorldManager>();
         InvokeRepeating("Spawn", 1f, spawnInterval);
     }
 
@@ -31,12 +32,14 @@ public class ObstacleSpawner : MonoBehaviour
         else
             currentPrefabs = fireballPrefabs;
 
-        // Vælg tilfældig bil eller ildkugle
-        int randomIndex = Random.Range(0, currentPrefabs.Length);
-        GameObject prefabToSpawn = currentPrefabs[randomIndex];
+        // Vælg tilfældig prefab
+        int randomPrefab = Random.Range(0, currentPrefabs.Length);
 
-        float randomY = Random.Range(minY, maxY);
-        Vector3 pos = new Vector3(spawnX, randomY, 0);
-        Instantiate(prefabToSpawn, pos, Quaternion.identity);
+        // Vælg tilfældig bane
+        int randomLane = Random.Range(0, lanes.Length);
+        float laneY = lanes[randomLane];
+
+        Vector3 pos = new Vector3(spawnX, laneY, 0);
+        Instantiate(currentPrefabs[randomPrefab], pos, Quaternion.identity);
     }
 }
