@@ -35,16 +35,19 @@ public class ObstacleSpawner : MonoBehaviour
         }
         else if (spawnCount <= 8)
         {
-            // Næste 4 spawns — to obstacles i to forskellige baner
-            int lane1 = Random.Range(0, lanes.Length);
-            int lane2;
+            // Alle mulige par af baner
+                int[][] lanePairs = new int[][]
+                {
+                    new int[] { 0, 1 },  // 0.9 og 0
+                    new int[] { 0, 2 },  // 0.9 og -0.9
+                    new int[] { 1, 2 },  // 0 og -0.9
+                };
 
-            // Sørg for at lane2 er forskellig fra lane1
-            do { lane2 = Random.Range(0, lanes.Length); }
-            while (lane2 == lane1);
+                // Vælg et tilfældigt par
+                int[] chosenPair = lanePairs[Random.Range(0, lanePairs.Length)];
 
-            SpawnInLane(currentPrefabs, lane1);
-            SpawnInLane(currentPrefabs, lane2);
+                SpawnInLane(currentPrefabs, chosenPair[0]);
+                SpawnInLane(currentPrefabs, chosenPair[1]);
         }
         else
         {

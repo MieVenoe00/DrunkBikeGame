@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4594488057715310816}
   - component: {fileID: 4285351694110475672}
   - component: {fileID: 1282552342955698710}
+  - component: {fileID: -1661516863122819888}
   m_Layer: 0
   m_Name: BrownCar
   m_TagString: Untagged
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: f38bae54d9d3c452885ae95a4244f266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,3 +167,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1110713, y: 0.7144927}
   m_EdgeRadius: 0
+--- !u!114 &-1661516863122819888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8476819579245999510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0ef63b171ac41ecb21f7f71fd11181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+  speed: 3

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2045144055554587867}
   - component: {fileID: 8038796045254339494}
   - component: {fileID: 8772314784062655961}
+  - component: {fileID: 940908959297997770}
   m_Layer: 0
   m_Name: BlueCar
   m_TagString: Untagged
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: a7451ef7c439848ccbc2d41deede584b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,3 +167,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1110713, y: 0.7144927}
   m_EdgeRadius: 0
+--- !u!114 &940908959297997770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228462763751643616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0ef63b171ac41ecb21f7f71fd11181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+  speed: 3

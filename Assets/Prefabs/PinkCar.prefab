@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8370280962497261399}
   - component: {fileID: 7669613638709061190}
   - component: {fileID: 3358430466940776356}
+  - component: {fileID: -6106686276786369188}
   m_Layer: 0
   m_Name: PinkCar
   m_TagString: Untagged
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 9e37ef175c0e944638724d1bcdbd2aeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,3 +167,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1110713, y: 0.7144927}
   m_EdgeRadius: 0
+--- !u!114 &-6106686276786369188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926474393881958634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0ef63b171ac41ecb21f7f71fd11181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+  speed: 3

@@ -151,9 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee970f00d3104fb9a2215a029253310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 3
-  minY: -1
-  maxY: 1.5
 --- !u!61 &39684933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -860,16 +857,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
   carPrefabs:
   - {fileID: 3585320579052206454, guid: e8cb34877e9ac42b4bb1486389bda9ba, type: 3}
-  - {fileID: 6659184253334480983, guid: 39e1d6d6fe8a041889ce1f751e5b7f2b, type: 3}
-  - {fileID: 722687663278315335, guid: f1366748ca9964185b7dd630c379d251, type: 3}
+  - {fileID: 1228462763751643616, guid: d6971db3562b94c18973a44d5d5a5c14, type: 3}
+  - {fileID: 8476819579245999510, guid: d50d1237b2e5146d598e85b295f207b6, type: 3}
+  - {fileID: 3600669056822905522, guid: 34a9547bfbf5e4e06a8e80a95d818303, type: 3}
+  - {fileID: 5926474393881958634, guid: 24f30013fda6f4c44874d223a26e4904, type: 3}
+  - {fileID: 5292157202730821098, guid: 575cdd5560ccd49cca26cd7e6094193d, type: 3}
   fireballPrefabs:
   - {fileID: 1841953298111474972, guid: f2bcdfe051d7b44978254d4bfa6c1a94, type: 3}
   - {fileID: 5485641024394563286, guid: 4dc6d70b0659e420cab19d81fd41e4e1, type: 3}
   - {fileID: 2664391804518712441, guid: e085aabd5546a4a3dafadeaf39b81827, type: 3}
   spawnInterval: 2
   spawnX: 4
-  minY: -1
-  maxY: 1.5
 --- !u!4 &1777223655
 Transform:
   m_ObjectHideFlags: 0
