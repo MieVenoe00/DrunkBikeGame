@@ -1,13 +1,31 @@
 fileFormatVersion: 2
-guid: a7403d70e7fb64f099fab5d0448b7443
+guid: f49a535df29894770b3bb3b961144ca4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2655877457125357940
-    second: FireballDPI2_0
+      213: -6826602922413761910
+    second: Fireballsprite_0
   - first:
-      213: -5912081517434396423
-    second: FireballDPI2_1
+      213: -1121925898057674114
+    second: Fireballsprite_1
+  - first:
+      213: 152223493102086196
+    second: Fireballsprite_2
+  - first:
+      213: 220165093219707714
+    second: Fireballsprite_3
+  - first:
+      213: -5204444565887879659
+    second: Fireballsprite_4
+  - first:
+      213: -3770258507795711947
+    second: Fireballsprite_5
+  - first:
+      213: 8281238269729136302
+    second: Fireballsprite_6
+  - first:
+      213: 6056009929957676560
+    second: Fireballsprite_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,7 +67,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -99,62 +117,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireballDPI2_0
+      name: Fireballsprite_0
       rect:
         serializedVersion: 2
-        x: 114
-        y: 157
-        width: 2705
-        height: 1686
+        x: 0
+        y: 3710
+        width: 3111
+        height: 1855
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c864311368d642bd0800000000000000
-      internalID: -2655877457125357940
+      spriteID: a8a52ea9fc80341a0800000000000000
+      internalID: -6826602922413761910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireballDPI2_1
+      name: Fireballsprite_1
       rect:
         serializedVersion: 2
-        x: 2329
-        y: 1221
-        width: 622
-        height: 134
+        x: 0
+        y: 1855
+        width: 3111
+        height: 1855
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f0ab26fe2114fda0800000000000000
-      internalID: -5912081517434396423
+      spriteID: e7216f5075e1e60f0800000000000000
+      internalID: -1121925898057674114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireballsprite_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3111
+        height: 1855
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 438a1d0e57ecc1200800000000000000
+      internalID: 152223493102086196
       vertices: []
       indices: 
       edges: []
@@ -163,7 +190,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 6073a732ebce84af1bf249861442e929
     internalID: 0
     vertices: []
     indices: 
@@ -171,10 +198,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":3.0},"gridSpriteSize":{"x":3111.0,"y":1855.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      FireballDPI2_0: -2655877457125357940
-      FireballDPI2_1: -5912081517434396423
+      Fireballsprite_0: -6826602922413761910
+      Fireballsprite_1: -1121925898057674114
+      Fireballsprite_2: 152223493102086196
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
