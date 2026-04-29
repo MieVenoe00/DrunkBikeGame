@@ -3,22 +3,38 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 3f;
-    public float minY = -1.2f;
-    public float maxY = 1.2f;
+    private float[] lanes = { -0.9f, 0f, 0.9f };
+    private int currentLane = 1; // Starter på midten (0)
+
+    void Start()
+    {
+        // Sæt startposition
+        transform.position = new Vector3(transform.position.x, lanes[currentLane], 0);
+    }
 
     void Update()
     {
-        float input = 0f;
+        if (Keyboard.current.upArrowKey.wasPressedThisFrame)
+        {
+            if (currentLane < lanes.Length - 1) // Må ikke gå over øverste bane
+            {
+                currentLane++;
+                MoveTolane();
+            }
+        }
 
-        if (Keyboard.current.upArrowKey.isPressed)
-            input = 1f;
-        else if (Keyboard.current.downArrowKey.isPressed)
-            input = -1f;
+        if (Keyboard.current.downArrowKey.wasPressedThisFrame)
+        {
+            if (currentLane > 0) // Må ikke gå under nederste bane
+            {
+                currentLane--;
+                MoveTolane();
+            }
+        }
+    }
 
-        Vector3 pos = transform.position;
-        pos.y += input * moveSpeed * Time.deltaTime;
-        pos.y = Mathf.Clamp(pos.y, minY, maxY);
-        transform.position = pos;
+    void MoveTolane()
+    {
+        transform.position = new Vector3(transform.position.x, lanes[currentLane], 0);
     }
 }
