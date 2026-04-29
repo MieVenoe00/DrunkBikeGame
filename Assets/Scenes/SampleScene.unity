@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 3
-  minY: -1.2
-  maxY: 1.2
+  minY: -1
+  maxY: 1.5
 --- !u!61 &39684933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -868,8 +868,8 @@ MonoBehaviour:
   - {fileID: 2664391804518712441, guid: e085aabd5546a4a3dafadeaf39b81827, type: 3}
   spawnInterval: 2
   spawnX: 4
-  minY: -1.2
-  maxY: 1.2
+  minY: -1
+  maxY: 1.5
 --- !u!4 &1777223655
 Transform:
   m_ObjectHideFlags: 0
