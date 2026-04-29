@@ -4,7 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class DieDieDie : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+  
+    public GameObject DødMand;
+
+        void OnTriggerEnter2D(Collider2D other)
 {
     if (other.CompareTag("car"))
     {
@@ -13,9 +16,12 @@ public class DieDieDie : MonoBehaviour
     }
 }
 
+
     void Die()
     {
-        
+        Instantiate(DødMand, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
+
     }
 }
