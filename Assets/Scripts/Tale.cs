@@ -1,15 +1,15 @@
 using UnityEngine;
 using System.Collections;
+
+
 public class Tale : MonoBehaviour
 {
-    public GameObject speechBubble;
+    public GameObject speechBubblePrefab;
 
-    IEnumerator Start()
+    void Start()
     {
-        speechBubble.SetActive(true);
+        GameObject bubble = Instantiate(speechBubblePrefab);
 
-        yield return new WaitForSeconds(3f);
-
-        speechBubble.SetActive(false);
+        Destroy(bubble, 3f); 
     }
 }
