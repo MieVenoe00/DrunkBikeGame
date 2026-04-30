@@ -4,41 +4,38 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private float[] lanes = { -0.9f, 0f, 0.9f };
-    private int currentLane = 1; // Starter på midten (0)
+    private int currentLane = 1;
 
     void Start()
     {
-        // Sæt startposition
         transform.position = new Vector3(transform.position.x, lanes[currentLane], 0);
     }
 
     void Update()
     {
-          // Bevæg ikke spilleren hvis Spawner ikke er aktiv (spillet ikke startet)
-    if (!GameObject.Find("Spawner").activeInHierarchy) return;
+        if (!GameObject.Find("Spawner").activeInHierarchy) return;
 
-    if (Keyboard.current.upArrowKey.wasPressedThisFrame)
-    // ... resten af din kode
-        if (Keyboard.current.upArrowKey.wasPressedThisFrame)
+        bool goUp   = Keyboard.current.upArrowKey.wasPressedThisFrame   || MobileInput.upPressed;
+        bool goDown = Keyboard.current.downArrowKey.wasPressedThisFrame  || MobileInput.downPressed;
+
+        // Reset mobile flags
+        MobileInput.upPressed   = false;
+        MobileInput.downPressed = false;
+
+        if (goUp && currentLane < lanes.Length - 1)
         {
-            if (currentLane < lanes.Length - 1) // Må ikke gå over øverste bane
-            {
-                currentLane++;
-                MoveTolane();
-            }
+            currentLane++;
+            MoveToLane();
         }
 
-        if (Keyboard.current.downArrowKey.wasPressedThisFrame)
+        if (goDown && currentLane > 0)
         {
-            if (currentLane > 0) // Må ikke gå under nederste bane
-            {
-                currentLane--;
-                MoveTolane();
-            }
+            currentLane--;
+            MoveToLane();
         }
     }
 
-    void MoveTolane()
+    void MoveToLane()
     {
         transform.position = new Vector3(transform.position.x, lanes[currentLane], 0);
     }

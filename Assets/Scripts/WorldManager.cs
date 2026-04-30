@@ -12,8 +12,8 @@ public class WorldManager : MonoBehaviour
     private ObstacleSpawner obstacleSpawner;
 
     [Header("Spawn Interval per Level")]
-public float spawnIntervalLevel1 = 2f;
-public float spawnIntervalLevel2 = 1.5f;
+    public float spawnIntervalLevel1 = 2f;
+    public float spawnIntervalLevel2 = 1.5f;
 
     void Start()
     {
@@ -26,7 +26,10 @@ public float spawnIntervalLevel2 = 1.5f;
 
     void Update()
     {
-        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        bool switchWorld = Keyboard.current.tabKey.wasPressedThisFrame || MobileInput.switchPressed;
+        MobileInput.switchPressed = false;
+
+        if (switchWorld)
             SwitchWorld();
     }
 
@@ -37,7 +40,7 @@ public float spawnIntervalLevel2 = 1.5f;
         normalWorld2.SetActive(isNormalWorld);
         magicWorld.SetActive(!isNormalWorld);
         magicWorld2.SetActive(!isNormalWorld);
-        obstacleSpawner.ResetSpawnTimer(isNormalWorld); // ← rettet fra OnWorldSwitched
+        obstacleSpawner.ResetSpawnTimer(isNormalWorld);
     }
 
     public bool IsNormalWorld() => isNormalWorld;
