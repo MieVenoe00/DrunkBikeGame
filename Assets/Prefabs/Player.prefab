@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 832733296848204180}
   - component: {fileID: 3490377402916115491}
   - component: {fileID: 2891305342428083237}
+  - component: {fileID: 87955984935902636}
   - component: {fileID: 2643750814728931108}
   - component: {fileID: -1989869917135803637}
   m_Layer: 0
@@ -181,6 +182,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee970f00d3104fb9a2215a029253310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!114 &87955984935902636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675789601041279134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b6ebd482130470c89588b7b6900fe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DieDieDie
+  "D\xF8dMand": {fileID: 5223216534610765286, guid: dd2a12861213349328b5b92e5a067e08, type: 3}
 --- !u!95 &2643750814728931108
 Animator:
   serializedVersion: 7
@@ -215,3 +229,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b6ebd482130470c89588b7b6900fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieDieDie
+  "D\xF8dMand": {fileID: 0}
