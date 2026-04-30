@@ -11,7 +11,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     [Header("Spawn Interval per Level")]
     public float spawnIntervalLevel1 = 2f;
-    public float spawnIntervalLevel2 = 1.5f;
+    public float spawnIntervalLevel2 = 2f;
     public float spawnX = 4f;
 
     [Header("Level System")]
