@@ -208,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107742408}
   - component: {fileID: 107742407}
+  - component: {fileID: 107742409}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -282,13 +283,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107742406}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.88, y: -0.9, z: 0}
-  m_LocalScale: {x: 1.2580912, y: 1.2580912, z: 1.2580912}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 288, y: -90, z: -9000}
+  m_LocalScale: {x: 125.80912, y: 125.80912, z: 125.80912}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1968170198}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &107742409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107742406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba62051ff22704ef69669ba09474644c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tale
+  speechBubblePrefab: {fileID: 6399249068558691478, guid: efcabbacdc7d94138954d9bcbbe2b576, type: 3}
 --- !u!1 &342509841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,6 +1490,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 107742408}
   - {fileID: 1728905295}
   - {fileID: 1946152105}
   m_Father: {fileID: 0}
@@ -1661,6 +1676,5 @@ SceneRoots:
   - {fileID: 3334585046232025169}
   - {fileID: 1777223655}
   - {fileID: 532435234}
-  - {fileID: 107742408}
   - {fileID: 1968170198}
   - {fileID: 401854855}
