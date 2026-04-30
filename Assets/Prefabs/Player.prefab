@@ -195,6 +195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieDieDie
   "D\xF8dMand": {fileID: 5223216534610765286, guid: dd2a12861213349328b5b92e5a067e08, type: 3}
+  replayCanvas: {fileID: 0}
+  spawner: {fileID: 0}
+  animatorsToDisable: []
 --- !u!95 &2643750814728931108
 Animator:
   serializedVersion: 7
@@ -230,3 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DieDieDie
   "D\xF8dMand": {fileID: 0}
+  replayCanvas: {fileID: 0}
+  spawner: {fileID: 0}
+  animatorsToDisable:
+  - {fileID: 0}

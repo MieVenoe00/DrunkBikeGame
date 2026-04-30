@@ -7,7 +7,11 @@ public class DieDieDie : MonoBehaviour
   
     public GameObject DødMand;
     public GameObject replayCanvas; 
-    public GameObject spawner;       
+    public GameObject spawner;     
+
+      [Header("Animationer der stopper ved død")]
+    public Animator[] animatorsToDisable;
+  
 
         void OnTriggerEnter2D(Collider2D other)
 {
@@ -28,7 +32,13 @@ public class DieDieDie : MonoBehaviour
         // Vis replay knap
         if (replayCanvas != null)
             replayCanvas.SetActive(true);
-            
+
+        // Stop animationer
+        foreach (Animator anim in animatorsToDisable)
+        {
+            anim.enabled = false;
+        }
+
         Instantiate(DødMand, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
