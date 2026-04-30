@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+          // Bevæg ikke spilleren hvis Spawner ikke er aktiv (spillet ikke startet)
+    if (!GameObject.Find("Spawner").activeInHierarchy) return;
+
+    if (Keyboard.current.upArrowKey.wasPressedThisFrame)
+    // ... resten af din kode
         if (Keyboard.current.upArrowKey.wasPressedThisFrame)
         {
             if (currentLane < lanes.Length - 1) // Må ikke gå over øverste bane

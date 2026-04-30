@@ -6,6 +6,8 @@ public class DieDieDie : MonoBehaviour
 {
   
     public GameObject DødMand;
+    public GameObject replayCanvas; 
+    public GameObject spawner;       
 
         void OnTriggerEnter2D(Collider2D other)
 {
@@ -19,6 +21,14 @@ public class DieDieDie : MonoBehaviour
 
     void Die()
     {
+        // Stop spawner
+        if (spawner != null)
+            spawner.SetActive(false);
+
+        // Vis replay knap
+        if (replayCanvas != null)
+            replayCanvas.SetActive(true);
+            
         Instantiate(DødMand, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
