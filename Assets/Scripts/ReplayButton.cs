@@ -19,24 +19,14 @@ public class ReplayButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         buttonImage.sprite = normalSprite;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        buttonImage.sprite = hoverSprite;
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        buttonImage.sprite = normalSprite;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        buttonImage.sprite = pressedSprite;
-    }
+    public void OnPointerEnter(PointerEventData eventData) { buttonImage.sprite = hoverSprite; }
+    public void OnPointerExit(PointerEventData eventData) { buttonImage.sprite = normalSprite; }
+    public void OnPointerDown(PointerEventData eventData) { buttonImage.sprite = pressedSprite; }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         buttonImage.sprite = releasedSprite;
+        GameState.isReplay = true; // ← fortæl spillet det er replay
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
