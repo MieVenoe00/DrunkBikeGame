@@ -4,7 +4,9 @@ using UnityEngine.InputSystem;
 public class WorldManager : MonoBehaviour
 {
     public GameObject normalWorld;
+    public GameObject normalWorld2;
     public GameObject magicWorld;
+    public GameObject magicWorld2;
 
     private bool isNormalWorld = true;
     private ObstacleSpawner obstacleSpawner;
@@ -16,7 +18,9 @@ public float spawnIntervalLevel2 = 1.5f;
     void Start()
     {
         normalWorld.SetActive(true);
+        normalWorld2.SetActive(true);
         magicWorld.SetActive(false);
+        magicWorld2.SetActive(false);
         obstacleSpawner = FindAnyObjectByType<ObstacleSpawner>();
     }
 
@@ -30,7 +34,9 @@ public float spawnIntervalLevel2 = 1.5f;
     {
         isNormalWorld = !isNormalWorld;
         normalWorld.SetActive(isNormalWorld);
+        normalWorld2.SetActive(isNormalWorld);
         magicWorld.SetActive(!isNormalWorld);
+        magicWorld2.SetActive(!isNormalWorld);
         obstacleSpawner.ResetSpawnTimer(isNormalWorld); // ← rettet fra OnWorldSwitched
     }
 
