@@ -9,10 +9,10 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("Magic World - Ildkugler")]
     public GameObject[] fireballPrefabs;
 
-    [Header("Spawn Indstillinger")]
-    public float spawnInterval = 2f;
+    [Header("Spawn Interval per Level")]
+    public float spawnIntervalLevel1 = 2f;
+    public float spawnIntervalLevel2 = 1.5f;
     public float spawnX = 4f;
-    public float gracePeriodSpawnX = 7f; // Længere ude når man skifter verden
 
     [Header("Level System")]
     public float levelDuration = 30f;
@@ -28,41 +28,54 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("Hastighed")]
     public float baseSpeed = 3f;
     public float maxSpeed = 6f;
+    public float totalSpeedDuration = 60f;
 
     private float[] lanes = { 0.9f, 0f, -0.9f };
     private int currentLevel = 0;
     private float currentSpeed;
     private float levelTimer = 0f;
+    private float globalTimer = 0f;
 
     private int normalSequenceIndex = 0;
     private int magicSequenceIndex = 0;
 
-    // Grace period flags
-    private bool normalWorldGrace = false;
-    private bool magicWorldGrace = false;
+    private Coroutine normalCoroutine;
+    private Coroutine magicCoroutine;
 
     void Start()
     {
         currentSpeed = baseSpeed;
-        StartCoroutine(SpawnNormalWorld());
-        StartCoroutine(SpawnMagicWorld());
+        normalCoroutine = StartCoroutine(SpawnNormalWorld(1f));
+        magicCoroutine = StartCoroutine(SpawnMagicWorld(1f));
         StartCoroutine(LevelTimer());
     }
 
     void Update()
     {
+        globalTimer += Time.deltaTime;
         levelTimer += Time.deltaTime;
-        float t = Mathf.Clamp01((levelTimer % levelDuration) / levelDuration);
+        float t = Mathf.Clamp01(globalTimer / totalSpeedDuration);
         currentSpeed = Mathf.Lerp(baseSpeed, maxSpeed, t);
     }
 
-    // Kaldes fra WorldManager når verden skifter
-    public void OnWorldSwitched(bool switchedToNormal)
+    // ← Nu en selvstændig metode og ikke inde i Update!
+    float GetCurrentInterval()
+    {
+        return currentLevel == 0 ? spawnIntervalLevel1 : spawnIntervalLevel2;
+    }
+
+    public void ResetSpawnTimer(bool switchedToNormal)
     {
         if (switchedToNormal)
-            normalWorldGrace = true; // Næste spawn i normal verden starter længere ude
+        {
+            StopCoroutine(normalCoroutine);
+            normalCoroutine = StartCoroutine(SpawnNormalWorld(GetCurrentInterval()));
+        }
         else
-            magicWorldGrace = true;  // Næste spawn i magisk verden starter længere ude
+        {
+            StopCoroutine(magicCoroutine);
+            magicCoroutine = StartCoroutine(SpawnMagicWorld(GetCurrentInterval()));
+        }
     }
 
     IEnumerator LevelTimer()
@@ -78,50 +91,40 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnNormalWorld()
+    IEnumerator SpawnNormalWorld(float initialDelay)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(initialDelay);
         while (true)
         {
             int[] sequence = currentLevel == 0 ? normalSequenceLevel1 : normalSequenceLevel2;
             int count = sequence[normalSequenceIndex % sequence.Length];
-
-            // Brug grace period X hvis verden lige er skiftet til
-            float currentSpawnX = normalWorldGrace ? gracePeriodSpawnX : spawnX;
-            normalWorldGrace = false; // Reset efter brug
-
-            SpawnObstacles(carPrefabs, count, isNormalWorld: true, spawnXOverride: currentSpawnX);
+            SpawnObstacles(carPrefabs, count, isNormalWorld: true);
             normalSequenceIndex++;
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(GetCurrentInterval());
         }
     }
 
-    IEnumerator SpawnMagicWorld()
+    IEnumerator SpawnMagicWorld(float initialDelay)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(initialDelay);
         while (true)
         {
             int[] sequence = currentLevel == 0 ? magicSequenceLevel1 : magicSequenceLevel2;
             int count = sequence[magicSequenceIndex % sequence.Length];
-
-            // Brug grace period X hvis verden lige er skiftet til
-            float currentSpawnX = magicWorldGrace ? gracePeriodSpawnX : spawnX;
-            magicWorldGrace = false; // Reset efter brug
-
-            SpawnObstacles(fireballPrefabs, count, isNormalWorld: false, spawnXOverride: currentSpawnX);
+            SpawnObstacles(fireballPrefabs, count, isNormalWorld: false);
             magicSequenceIndex++;
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(GetCurrentInterval());
         }
     }
 
-    void SpawnObstacles(GameObject[] prefabs, int count, bool isNormalWorld, float spawnXOverride)
+    void SpawnObstacles(GameObject[] prefabs, int count, bool isNormalWorld)
     {
         int[] shuffledLanes = ShuffleLanes();
 
         for (int i = 0; i < count; i++)
         {
             int randomPrefab = Random.Range(0, prefabs.Length);
-            Vector3 pos = new Vector3(spawnXOverride, lanes[shuffledLanes[i]], 0);
+            Vector3 pos = new Vector3(spawnX, lanes[shuffledLanes[i]], 0);
             GameObject obj = Instantiate(prefabs[randomPrefab], pos, Quaternion.identity);
 
             Obstacle obstacle = obj.GetComponent<Obstacle>();

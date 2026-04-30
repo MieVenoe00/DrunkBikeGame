@@ -559,6 +559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WorldManager
   normalWorld: {fileID: 911060718}
   magicWorld: {fileID: 1496984720}
+  spawnIntervalLevel1: 2
+  spawnIntervalLevel2: 1.5
 --- !u!4 &1393673228
 Transform:
   m_ObjectHideFlags: 0
@@ -703,16 +705,17 @@ MonoBehaviour:
   - {fileID: 5292157202730821098, guid: 575cdd5560ccd49cca26cd7e6094193d, type: 3}
   fireballPrefabs:
   - {fileID: 1841953298111474972, guid: f2bcdfe051d7b44978254d4bfa6c1a94, type: 3}
-  spawnInterval: 2
+  spawnIntervalLevel1: 2
+  spawnIntervalLevel2: 1.5
   spawnX: 4
-  gracePeriodSpawnX: 7
   levelDuration: 30
-  normalSequenceLevel1: 0100000001000000010000000200000001000000020000000200000001000000
-  magicSequenceLevel1: 0100000001000000020000000100000001000000020000000200000001000000
-  normalSequenceLevel2: 0200000002000000020000000300000002000000030000000200000003000000
-  magicSequenceLevel2: 0200000002000000030000000200000003000000020000000300000003000000
-  baseSpeed: 3
-  maxSpeed: 6
+  normalSequenceLevel1: 0100000002000000010000000200000003000000
+  magicSequenceLevel1: 0100000002000000020000000100000001000000
+  normalSequenceLevel2: 020000000200000002000000030000000200000003000000030000000200000003000000
+  magicSequenceLevel2: 020000000200000003000000020000000300000002000000030000000300000003000000
+  baseSpeed: 5
+  maxSpeed: 10
+  totalSpeedDuration: 80
 --- !u!4 &1777223655
 Transform:
   m_ObjectHideFlags: 0

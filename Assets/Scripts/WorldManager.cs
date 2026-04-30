@@ -9,6 +9,10 @@ public class WorldManager : MonoBehaviour
     private bool isNormalWorld = true;
     private ObstacleSpawner obstacleSpawner;
 
+    [Header("Spawn Interval per Level")]
+public float spawnIntervalLevel1 = 2f;
+public float spawnIntervalLevel2 = 1.5f;
+
     void Start()
     {
         normalWorld.SetActive(true);
@@ -27,9 +31,7 @@ public class WorldManager : MonoBehaviour
         isNormalWorld = !isNormalWorld;
         normalWorld.SetActive(isNormalWorld);
         magicWorld.SetActive(!isNormalWorld);
-
-        // Fortæl spawner at verden er skiftet
-        obstacleSpawner.OnWorldSwitched(isNormalWorld);
+        obstacleSpawner.ResetSpawnTimer(isNormalWorld); // ← rettet fra OnWorldSwitched
     }
 
     public bool IsNormalWorld() => isNormalWorld;
